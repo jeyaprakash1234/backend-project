@@ -138,7 +138,7 @@ router.post('/forgot-password',(req,res)=>{
     from: email,
     to: email,
     subject: 'Reset your password',
-    text: `https://backend-project-2-cbk8.onrender.com/resetpassword/${user._id}/${token}`
+    text: `https://frontend-project-89zobr1xf-jeyaprakashs-projects-ddc65096.vercel.app/resetpassword/${user._id}/${token}`
   };
   
   transporter.sendMail(mailOptions, function(error, info){
