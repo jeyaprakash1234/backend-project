@@ -138,7 +138,7 @@ router.post('/forgot-password',(req,res)=>{
     from: email,
     to: email,
     subject: 'Reset your password',
-    text: `http://localhost:3000/resetpassword/${user._id}/${token}`
+    text: `https://backend-project-2-cbk8.onrender.com/resetpassword/${user._id}/${token}`
   };
   
   transporter.sendMail(mailOptions, function(error, info){
