@@ -176,7 +176,7 @@ app.post('/api/booking/:id/cancel', async (req, res) => {
         </div>
         <div class="content">
             <p>Hello sir/mam,</p>
-            <p>We received Your Booking But {content}</p>
+            <p>We received Your Booking But ${content}</p>
 
             <p>Call:+(91)123455654 </p>
         </div>
