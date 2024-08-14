@@ -197,7 +197,7 @@ router.post('/forgot-password',(req,res)=>{
             Reset Your Password
         </div>
         <div class="content">
-            <p>Hello {{user}},</p>
+            <p>Hello sir/mam,</p>
             <p>We received a request to reset your password. Click the button below to reset it.</p>
             <a href="https://frontend-project-eight-pi.vercel.app//resetpassword/${user._id}/${token}" class="button">Reset Password</a>
             <p>If you didn't request a password reset, you can safely ignore this email. Rest assured your account is safe.</p>
