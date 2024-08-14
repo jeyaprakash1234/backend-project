@@ -128,6 +128,9 @@ router.post('/forgot-password',(req,res)=>{
    const token = jwt.sign({id:user._id},"yourJWTSecret", {expiresIn: "1d"})
    var transporter = nodemailer.createTransport({
     service: 'gmail',
+    host:"smtp.ethereal.email",
+    port:587,
+ 
     auth: {
       user: 'hhtfcjp@gmail.com',
       pass: 'zlaswvkunhfovpqh'
@@ -138,7 +141,73 @@ router.post('/forgot-password',(req,res)=>{
     from: email,
     to: email,
     subject: 'Reset your password',
-    text: `https://frontend-project-89zobr1xf-jeyaprakashs-projects-ddc65096.vercel.app/resetpassword/${user._id}/${token}`
+    
+    html:`<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 20px auto;
+        }
+        .header {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #333333;
+        }
+        .content {
+            font-size: 16px;
+            color: #555555;
+            line-height: 1.5;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 16px;
+            color: #ffffff;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #aaaaaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            Reset Your Password
+        </div>
+        <div class="content">
+            <p>Hello {{user}},</p>
+            <p>We received a request to reset your password. Click the button below to reset it.</p>
+            <a href="{{https://frontend-project-89zobr1xf-jeyaprakashs-projects-ddc65096.vercel.app/resetpassword/${user._id}/${token}}}" class="button">Reset Password</a>
+            <p>If you didn't request a password reset, you can safely ignore this email. Rest assured your account is safe.</p>
+        </div>
+        <div class="footer">
+            <p>Thank you,<br>The CleanEase Team</p>
+        </div>
+    </div>
+</body>
+</html>
+`
   };
   
   transporter.sendMail(mailOptions, function(error, info){

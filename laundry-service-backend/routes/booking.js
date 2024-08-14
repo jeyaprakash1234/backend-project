@@ -1,45 +1,17 @@
-// const express = require('express');
-// const router = express.Router();
-// const auth = require('../middleware/auth');
-// const Booking = require('../models/Booking');
 
- 
-// router.post('/bookingdata', auth, async (req, res) => {
-//   const { service,phone,name,date,time, address, pincode } = req.body;
-
-//   try {
-//     const newBooking = new Booking({
-//       user: req.user.id,
-//       service,
-//       name,
-//       phone,
-//       date,
-//       time,
-      
-//       address,
-//       pincode
-//     });
-
-//     const booking = await newBooking.save();
-//     res.json(booking);
-//   } catch (err) {
-//     console.error(err.message);
-//     res.status(500).send('Server error');
-//   }
-// });
-
-// module.exports = router;
 
 
 const express = require('express');
 const router = express.Router();
+
 const Booking = require('../models/Booking');
+// const auth = require('../middleware/auth');
 
 // Create a new booking
 router.post('/bookingdata', async (req, res) => {
-  const { name, phone,address,pincode,date, time , service } = req.body;
+  const { name, phone,address,pincode,date, email , service } = req.body;
   try {
-    const newBooking = new Booking({ name, phone,address,pincode,date ,time,  service });
+    const newBooking = new Booking({  name, phone,address,pincode,date ,email,  service });
     await newBooking.save();
     res.status(201).json(newBooking);
   } catch (err) {
@@ -47,7 +19,13 @@ router.post('/bookingdata', async (req, res) => {
   }
 });
 
+
+
+
+
 // Get all bookings
+
+
 router.get('/', async (req, res) => {
   try {
     const bookings = await Booking.find();
@@ -56,5 +34,8 @@ router.get('/', async (req, res) => {
     res.status(500).json({ message: err.message });
   }
 });
+
+
+
 
 module.exports = router;
