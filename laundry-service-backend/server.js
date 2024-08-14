@@ -71,7 +71,79 @@ console.log(id)
             from: email,
             to: user.email,
             subject: 'CleanEase',
-            text: content 
+            // text: content 
+            html:`<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 20px auto;
+        }
+        .header {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #3498db;
+        }
+        .content {
+            font-size: 16px;
+            color: #555555;
+            line-height: 1.5;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 25px;
+            font-size: 16px;
+            color: #ffffff;
+            cursor: pointer;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+             .email-header img {
+            max-width: 100px;
+            border-radius: 50%;
+        }
+        .footer {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #aaaaaa;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+           <img src="https://png.pngtree.com/png-clipart/20220818/ourmid/pngtree-blue-washing-machine-for-laundry-logo-png-image_6114594.png/100" alt="Company Logo">
+ CleanEase
+        </div>
+        <div class="content">
+            <p>Hello sir/mam,</p>
+            <h2> ${content}</h2>
+
+            <p>Call:+(91)123455654 </p>
+            <p>Email:CleanEase@gmail.com </p>
+        </div>
+        <div class="footer">
+            <p>Thank you,<br>The CleanEase Team</p>
+        </div>
+    </div>
+</body>
+</html>`
         };
 
         // Send email
