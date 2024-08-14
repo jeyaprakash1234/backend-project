@@ -216,7 +216,7 @@ app.post('/api/booking/:id/cancel', async (req, res) => {
         .header {
             font-size: 24px;
             margin-bottom: 20px;
-            color: #333333;
+            color: #3498db;
         }
         .content {
             font-size: 16px;
@@ -239,16 +239,21 @@ app.post('/api/booking/:id/cancel', async (req, res) => {
             font-size: 12px;
             color: #aaaaaa;
         }
+         .header img {
+            max-width: 100px;
+            border-radius: 50%;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            Reset Your Password
+             <img src="https://png.pngtree.com/png-clipart/20220818/ourmid/pngtree-blue-washing-machine-for-laundry-logo-png-image_6114594.png" alt="Company Logo">
+             CleanEase
         </div>
         <div class="content">
             <p>Hello sir/mam,</p>
-            <p>We received Your Booking But ${content}</p>
+            <p> ${content}</p>
 
             <p>Call:+(91)123455654 </p>
         </div>
