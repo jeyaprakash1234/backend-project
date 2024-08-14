@@ -128,7 +128,7 @@ console.log(id)
 <body>
     <div class="container">
         <div class="header">
-           <img src="https://png.pngtree.com/png-clipart/20220818/ourmid/pngtree-blue-washing-machine-for-laundry-logo-png-image_6114594.png/100" alt="Company Logo">
+           <img src="https://png.pngtree.com/png-clipart/20220818/ourmid/pngtree-blue-washing-machine-for-laundry-logo-png-image_6114594.png" alt="Company Logo">
  CleanEase
         </div>
         <div class="content">
