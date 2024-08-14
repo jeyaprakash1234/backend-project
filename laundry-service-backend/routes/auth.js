@@ -179,6 +179,7 @@ router.post('/forgot-password',(req,res)=>{
             padding: 12px 25px;
             font-size: 16px;
             color: #ffffff;
+            cursor: pointer;
             background-color: #007bff;
             text-decoration: none;
             border-radius: 5px;
@@ -198,7 +199,7 @@ router.post('/forgot-password',(req,res)=>{
         <div class="content">
             <p>Hello {{user}},</p>
             <p>We received a request to reset your password. Click the button below to reset it.</p>
-            <a href={https://frontend-project-89zobr1xf-jeyaprakashs-projects-ddc65096.vercel.app/resetpassword/${user._id}/${token}} class="button">Reset Password</a>
+            <a href="https://frontend-project-89zobr1xf-jeyaprakashs-projects-ddc65096.vercel.app/resetpassword/${user._id}/${token}" class="button">Reset Password</a>
             <p>If you didn't request a password reset, you can safely ignore this email. Rest assured your account is safe.</p>
         </div>
         <div class="footer">
