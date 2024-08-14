@@ -114,7 +114,7 @@ console.log(id)
             text-decoration: none;
             border-radius: 5px;
         }
-             .email-header img {
+            .header img {
             max-width: 100px;
             border-radius: 50%;
         }
@@ -136,7 +136,7 @@ console.log(id)
             <h2> ${content}</h2>
 
             <p>Call:+(91)123455654 </p>
-            <p>Email:CleanEase@gmail.com </p>
+            <p>CleanEase@gmail.com </p>
         </div>
         <div class="footer">
             <p>Thank you,<br>The CleanEase Team</p>
